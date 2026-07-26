@@ -94,8 +94,8 @@
     document.querySelectorAll('[data-stat]').forEach((el) => {
       const v = stats[el.dataset.stat];
       if (v === undefined || v === null) return;
-      if (el.dataset.count !== undefined && typeof v === 'number') el.dataset.count = v;
-      el.textContent = v;
+      if (el.dataset.count !== undefined && typeof v === 'number') { el.dataset.count = v; el.textContent = v.toLocaleString('en-US') + (el.dataset.suffix || ''); }
+      else el.textContent = v;
     });
   };
   applyStats(CFG.stats || {});
@@ -149,9 +149,10 @@
     const tick = (ts) => {
       if (!start) start = ts;
       const p = Math.min((ts - start) / dur, 1);
-      el.textContent = prefix + (target * easeOut(p)).toFixed(decimals) + suffix;
+      const fmt = (n) => decimals ? n.toFixed(decimals) : Math.round(n).toLocaleString('en-US');
+      el.textContent = prefix + fmt(target * easeOut(p)) + suffix;
       if (p < 1) requestAnimationFrame(tick);
-      else el.textContent = prefix + target.toFixed(decimals) + suffix;
+      else el.textContent = prefix + fmt(target) + suffix;
     };
     requestAnimationFrame(tick);
   };
