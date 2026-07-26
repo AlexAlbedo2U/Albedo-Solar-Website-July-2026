@@ -340,6 +340,14 @@
     });
   });
 
+  /* ----- Office selector (contacto) ----- */
+  document.querySelectorAll('.office-tabs button').forEach((b) => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.office-tabs button').forEach((x) => x.classList.toggle('on', x === b));
+      document.querySelectorAll('[data-office-panel]').forEach((p) => { p.hidden = p.dataset.officePanel !== b.dataset.office; });
+    });
+  });
+
   /* ----- FAQ accordion ----- */
   document.querySelectorAll('.faq-item .faq-q').forEach((q) => {
     q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
