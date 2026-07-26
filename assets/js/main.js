@@ -61,6 +61,10 @@
       const es = cacheEs(el, 'Alt');
       el.setAttribute('alt', en ? el.dataset.enAlt : es);
     });
+    document.querySelectorAll('[data-en-src]').forEach((el) => {
+      if (el.dataset.esSrc === undefined) el.dataset.esSrc = el.getAttribute('src');
+      el.setAttribute('src', en ? el.dataset.enSrc : el.dataset.esSrc);
+    });
     document.querySelectorAll('[data-en-aria]').forEach((el) => {
       const es = cacheEs(el, 'Aria');
       el.setAttribute('aria-label', en ? el.dataset.enAria : es);
@@ -193,7 +197,7 @@
   /* ----- WhatsApp links: add a context prefill so the team knows the source.
      Any wa.me link may carry data-wa-es / data-wa-en with the message. ----- */
   const waBase = 'https://wa.me/' + (CFG.whatsapp || '50247136486');
-  document.querySelectorAll('a[href*="wa.me"]').forEach((a) => {
+  document.querySelectorAll('a[href*="wa.me"]:not(.wa-keep)').forEach((a) => {
     const setHref = () => {
       const msg = t(a.dataset.waEs || '', a.dataset.waEn || '');
       a.href = msg ? waBase + '?text=' + encodeURIComponent(msg) : waBase;

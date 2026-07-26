@@ -19,8 +19,9 @@ window.ALBEDO = {
   LIVE_FEED_URL: '',
 
   /* ----- Contact routing ----- */
-  whatsapp: '50247136486',                 // digits only, country code first
-  emailGeneral: 'solar@albedo-solar.com',  // clients / partners / general
+  whatsapp: '50230807294',                 // sales/general WhatsApp, digits only
+  whatsappInvestor: '50250038877',         // Alex's WhatsApp for investors
+  emailGeneral: 'info@albedo-solar.com',   // clients / partners / general
   emailInvestors: 'investment@albedo-solar.com', // investor enquiries route here
 
   /* ----- Newsletter (Mailchimp embedded form) -----
@@ -32,6 +33,6 @@ window.ALBEDO = {
   /* ----- Savings estimator assumptions ----- */
   estimator: {
     savingsRate: 0.90,  // share of the bill saved
-    years: 25,          // system life for lifetime savings
+    years: 30,          // system life for lifetime savings
   },
 };
