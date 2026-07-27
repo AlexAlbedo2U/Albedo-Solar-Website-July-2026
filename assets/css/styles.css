@@ -91,8 +91,8 @@ a { color: inherit; text-decoration: none; }
 
 /* ----------  Layout helpers  ---------- */
 .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
-section { position: relative; }
-.section-pad { padding: clamp(64px, 10vw, 130px) 0; }
+section { position: relative; scroll-margin-top: 96px; }
+.section-pad { padding: clamp(56px, 8vw, 104px) 0; }
 
 .eyebrow {
   display: inline-flex; align-items: center; gap: 9px;
@@ -832,3 +832,23 @@ h2 { font-size: clamp(2rem, 4.4vw, 3.3rem); }
   .pbk { grid-template-columns: 86px 1fr; }
   .flow { grid-template-columns: 1fr 1fr; }
 }
+
+
+/* ==========================================================================
+   Bill comparison (replaces the before/after slider)
+   ========================================================================== */
+.bill-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 980px; margin: 0 auto; }
+.bc-card { background: var(--surface); border: 1px solid var(--stroke); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); display: flex; flex-direction: column; }
+.bc-head { padding: 13px 22px; font-weight: 800; font-size: 0.95rem; letter-spacing: .02em; color: #fff; }
+.bc-before .bc-head { background: #5B6B66; }
+.bc-after .bc-head { background: var(--green); }
+.bc-img { height: 330px; overflow: hidden; position: relative; background: #fff; }
+.bc-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.bc-img::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 70px; background: linear-gradient(to top, #fff, transparent); }
+.bc-before .bc-img img { filter: grayscale(0.5) contrast(0.98); }
+.bc-foot { padding: 18px 22px 20px; border-top: 1px solid var(--stroke); }
+.bc-foot b { display: block; font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; color: var(--green-ink); }
+.bc-after .bc-foot b { color: var(--green-deep); }
+.bc-foot span { color: var(--muted); font-size: 0.9rem; }
+.bc-after { border-color: var(--stroke-2); }
+@media (max-width: 780px) { .bill-compare { grid-template-columns: 1fr; } .bc-img { height: 260px; } }
