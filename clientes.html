@@ -11,7 +11,7 @@
 <link rel="alternate" hreflang="es" href="https://albedo-solar.com/clientes.html" />
 <link rel="alternate" hreflang="en" href="https://albedo-solar.com/clientes.html?lang=en" />
 <link rel="alternate" hreflang="x-default" href="https://albedo-solar.com/clientes.html" />
-<link rel="stylesheet" href="assets/css/styles.css?v=6" />
+<link rel="stylesheet" href="assets/css/styles.css?v=7" />
 </head>
 <body>
 
@@ -61,7 +61,7 @@
 </section>
 
 <!-- VIDEO GALLERY -->
-<section class="section-pad" style="padding-top:48px">
+<section class="section-pad" style="padding-top:clamp(28px,4vw,52px)">
   <div class="wrap">
     <div class="sec-head" style="margin-bottom:36px">
       <h2 data-reveal data-en="Real projects, &lt;span class=&quot;gradient-text&quot;&gt;real savings&lt;/span&gt;">Proyectos reales, <span class="gradient-text">ahorro real</span></h2>
@@ -161,29 +161,39 @@
 </section>
 
 <!-- BEFORE / AFTER SLIDER -->
-<section class="section-pad" style="padding-top:0">
+<section class="section-pad" style="padding-top:clamp(20px,3vw,40px)">
   <div class="wrap">
     <div class="sec-head center">
       <span class="eyebrow" data-reveal data-en="The impact, up close">El impacto, visto de cerca</span>
       <h2 data-reveal data-delay="1" data-en="See what solar does to &lt;span class=&quot;solar-text&quot;&gt;your bill&lt;/span&gt;">Mira lo que la energía solar le hace a <span class="solar-text">tu factura</span></h2>
-      <p class="lead" style="margin-inline:auto" data-reveal data-delay="2" data-en="Drag to compare a bill without solar against one with Albedo panels.">Arrastra para comparar un recibo sin solar contra uno con paneles Albedo.</p>
+      <p class="lead" style="margin-inline:auto" data-reveal data-delay="2" data-en="Two real client bills, before and after going solar.">Dos recibos reales de clientes: antes y después de instalar.</p>
     </div>
     <div style="max-width:920px;margin:0 auto" data-reveal data-delay="2">
-      <div class="ba">
-        <img class="before" src="assets/images/example-before.png" alt="Factura sin energía solar" data-en-alt="Bill without solar" />
-        <img class="after" src="assets/images/example-after.png" alt="Factura con paneles solares" data-en-alt="Bill with solar panels" />
-        <span class="ba-label l" data-en="Without solar">Sin energía solar</span>
-        <span class="ba-label r" data-en="With Albedo panels">Con paneles Albedo</span>
-        <div class="ba-handle"></div>
-        <input type="range" min="0" max="100" value="50" aria-label="Comparar facturas" data-en-aria="Compare bills" />
+      <div class="bill-compare">
+      <div class="bc-card bc-before" data-reveal>
+        <div class="bc-head" data-en="Without solar">Sin energía solar</div>
+        <div class="bc-img"><img src="assets/images/example-before.png" alt="Recibo de luz real sin energía solar" data-en-alt="Real power bill without solar" loading="lazy" /></div>
+        <div class="bc-foot">
+          <b data-en="You pay 100% of your usage to the utility">Pagas el 100% de tu consumo a la eléctrica</b>
+          <span data-en="and the tariff goes up every year">y la tarifa sube cada año</span>
+        </div>
       </div>
+      <div class="bc-card bc-after" data-reveal data-delay="1">
+        <div class="bc-head" data-en="With Albedo panels">Con paneles Albedo</div>
+        <div class="bc-img"><img src="assets/images/example-after.png" alt="Recibo de luz real con paneles Albedo: meses en 0 kWh" data-en-alt="Real power bill with Albedo panels: months at 0 kWh" loading="lazy" /></div>
+        <div class="bc-foot">
+          <b data-en="The bill all but disappears">El recibo casi desaparece</b>
+          <span data-en="whole months billed at 0 kWh">meses enteros facturados en 0 kWh</span>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 </section>
 
 
 <!-- TESTIMONIOS -->
-<section class="section-pad" style="padding-bottom:0">
+<section class="section-pad" style="padding-bottom:clamp(20px,3vw,40px)">
   <div class="wrap">
     <div class="sec-head center">
       <span class="eyebrow" data-reveal data-en="Their words">Historias reales</span>
@@ -224,7 +234,7 @@
 </section>
 
 <!-- CTA -->
-<section class="section-pad cta-band" style="padding-top:0">
+<section class="section-pad cta-band" style="padding-top:clamp(20px,3vw,40px)">
   <div class="wrap">
     <div class="cta-box" data-reveal>
       <span class="halfsun" aria-hidden="true"></span>
@@ -244,7 +254,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a class="brand" href="index.html"><img src="assets/images/LOGO_SPANISH-white.png" data-en-src="assets/images/footer-logo.png" alt="Albedo Solar" style="height:74px;width:auto" /></a>
+        <a class="brand" href="index.html"><img src="assets/images/albedo-wordmark-es-white.png" data-en-src="assets/images/albedo-wordmark-white.png" alt="Albedo Solar" style="height:44px;width:auto" /></a>
         <p data-en="Solar energy with built-in financing for businesses, hotels and homes across Central America. Save money and fight climate change.">Energía solar con financiamiento propio para empresas, hoteles y hogares de Centroamérica. Ahorra y lucha contra el cambio climático.</p>
         <div class="socials" style="margin-top:22px">
           <a href="https://www.facebook.com/AlbedoSolarGuate" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6v1.9h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
@@ -304,7 +314,7 @@
   <a class="btn btn--ghost" href="beneficios.html#estimador" data-en="See your savings">Calcula tu ahorro</a>
 </div>
 
-<script src="assets/js/config.js?v=6"></script>
-<script src="assets/js/main.js?v=6"></script>
+<script src="assets/js/config.js?v=7"></script>
+<script src="assets/js/main.js?v=7"></script>
 </body>
 </html>
