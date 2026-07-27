@@ -852,3 +852,11 @@ h2 { font-size: clamp(2rem, 4.4vw, 3.3rem); }
 .bc-foot span { color: var(--muted); font-size: 0.9rem; }
 .bc-after { border-color: var(--stroke-2); }
 @media (max-width: 780px) { .bill-compare { grid-template-columns: 1fr; } .bc-img { height: 260px; } }
+
+
+/* estimator currency toggle + benefit photo headers */
+.cur-tabs { display: flex; gap: 6px; align-items: flex-end; padding-bottom: 4px; }
+.cur-tabs button { padding: 12px 16px; border-radius: 100px; font-weight: 800; font-size: 0.85rem; background: var(--surface); border: 1.5px solid var(--stroke); color: var(--muted); transition: .25s; }
+.cur-tabs button.on { background: var(--green); border-color: var(--green); color: #fff; }
+.est-prefixed[data-cur="$"]::before { content: "$"; }
+.card-media--short { aspect-ratio: auto; height: 158px; }
