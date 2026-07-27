@@ -210,7 +210,8 @@
   /* ----- Savings estimator (assumptions in config.js) ----- */
   const SAVINGS_RATE = (CFG.estimator && CFG.estimator.savingsRate) || 0.90;
   const YEARS = (CFG.estimator && CFG.estimator.years) || 25;
-  const fmtQ = (n) => 'Q' + Math.round(n).toLocaleString('es-GT');
+  let CUR = 'Q';
+  const fmtQ = (n) => (CUR === '$' ? '$' : 'Q') + Math.round(n).toLocaleString('en-US');
   const est = document.querySelector('#estimator');
   if (est) {
     const input = est.querySelector('#bill');
@@ -237,6 +238,17 @@
     };
     est.addEventListener('submit', (e) => { e.preventDefault(); calc(); });
     input.addEventListener('input', calc);
+
+    // Currency toggle: Q (Guatemala) / USD (Honduras, El Salvador)
+    est.querySelectorAll('.cur-tabs button').forEach((b) => {
+      b.addEventListener('click', () => {
+        CUR = b.dataset.cur;
+        est.querySelectorAll('.cur-tabs button').forEach((x) => x.classList.toggle('on', x === b));
+        const pre = est.querySelector('.est-prefixed');
+        if (pre) pre.dataset.cur = CUR;
+        calc();
+      });
+    });
 
     // Prefill from the hero mini-calculator (?bill=1200)
     const pre = new URLSearchParams(location.search).get('bill');

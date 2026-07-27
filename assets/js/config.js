@@ -7,11 +7,11 @@ window.ALBEDO = {
 
   /* ----- Live figures (update here, or point LIVE_FEED_URL at a JSON feed) ----- */
   stats: {
-    projects: 280,          // deployed projects (floor; live tracker later)
+    projects: 277,          // installed projects (Jun 30 2026; live tracker later)
     delinquency: '0.27%',   // public delinquency figure
-    co2Tons: 135000,        // lifetime tons CO2e avoided
-    clientSavings: '$72M+', // projected client electricity savings
-    impactClients: '44%',   // high social-impact clients
+    co2Tons: 157000,        // lifetime tons CO2e avoided (Jun 30 2026)
+    clientSavingsM: 89,     // net client savings, $M, 30-yr life (Jun 30 2026)
+    impactClients: 69,      // % high social-impact projects (Jun 30 2026)
   },
 
   /* Optional: a JSON endpoint that returns { "projects": 285, ... }.
